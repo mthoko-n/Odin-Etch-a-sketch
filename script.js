@@ -10,7 +10,7 @@ for (let i = 0; i < 16 * 16; i++) {
 
 const squares = document.querySelectorAll('.square');
 
-// Iterate over each element using a traditional for loop
+
 for (let i = 0; i < squares.length; i++) {
     const square = squares[i];
     
