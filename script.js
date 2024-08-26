@@ -1,11 +1,13 @@
 const container = document.querySelector('.container');
+const newBtn = document.querySelector('.green-button');
+const squareColorInput = document.getElementById('square-color');
+const hoverColorInput = document.getElementById('hover-color');
 
 // Function to create a grid
 function createGrid(dimensions) {
-    const squareSize = 16; 
-    const containerSize = squareSize * dimensions; // Size of container
-
-    // Update container size
+    const squareSize = 16;
+    const containerSize = squareSize * dimensions;
+    
     container.style.width = `${containerSize}px`;
     container.style.height = `${containerSize}px`;
 
@@ -20,23 +22,29 @@ function createGrid(dimensions) {
         square.classList.add('square');
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
+        square.style.backgroundColor = squareColorInput.value; // Set initial square color
 
-        // Add event listener for hover effect
-        square.addEventListener('mouseenter', function(e){
-            e.target.style.backgroundColor = '#ffeb3b'; // Change color on hover
+        square.addEventListener('mouseenter', function(e) {
+            e.target.style.backgroundColor = hoverColorInput.value; // Change color on hover
         });
 
         container.appendChild(square);
     }
 }
 
-// Create the initial 16x16 grid
+// Update the colors of the grid squares when the square color input changes
+squareColorInput.addEventListener('input', function() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.style.backgroundColor = squareColorInput.value;
+    });
+});
+
+// Initial grid creation
 createGrid(16);
 
-const newBtn = document.querySelector('.green-button');
-
-// Event listener for the button to create a new grid
-newBtn.addEventListener('click', function(e){
+// Button to create a new grid with custom dimensions
+newBtn.addEventListener('click', function(e) {
     let dimensions = parseInt(prompt("Enter dimension of grid (>0 & <100)"));
     
     if (isNaN(dimensions) || dimensions <= 0 || dimensions > 100) {
