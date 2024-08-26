@@ -5,51 +5,83 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #282c34;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Styling for the green button */
-.green-button {
-    background-color: #4caf50; /* Green background */
-    color: white;
-    border: none; 
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
-    border-radius: 5px; 
-    padding: 10px 20px; 
-    font-size: 16px; 
-    font-weight: bold; 
-    cursor: pointer; 
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #3a3f47;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover effect for the button */
-.green-button:hover {
-    background-color: #45a049; 
-    transform: scale(1.05); 
+.color-picker {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
+
+.green-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.green-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 256px; 
-    height: 256px; /* 16 * 16px */
-    border: 1px solid #333;
+    width: 256px;
+    height: 256px;
+    border: 2px solid #555;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .square {
     width: 16px;
     height: 16px;
     background-color: #4caf50;
-    border: 1px solid #ddd;
+    border: 1px solid #444;
     box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
 
 label {
-    font-size: 16px;
-    margin-right: 10px;
+    font-size: 14px;
+    margin-right: 8px;
+    color: #ffffff;
 }
 
 input[type="color"] {
     margin-right: 20px;
     cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
 }
