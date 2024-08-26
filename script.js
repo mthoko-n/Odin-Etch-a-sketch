@@ -12,19 +12,17 @@ const squares = document.querySelectorAll('.square');
 const newBtn= document.querySelector('.green-button');
 
 
-for (let i = 0; i < squares.length; i++) {
+for (let i = 0; i < squares.length; i++){
     const square = squares[i];
     
-    square.addEventListener('mouseenter', function(e) {
+    square.addEventListener('mouseenter', function(e){
         e.target.style.backgroundColor = '#ffeb3b'; // Change color on hover
     });
 
-    square.addEventListener('mouseleave', function(e) {
-        e.target.style.backgroundColor = '#4caf50'; // revert to original
-    });
+   
 }
 
-newBtn.addEventListener('click', function(e) {
+newBtn.addEventListener('click', function(e){
     let dimensions = parseInt(prompt("Enter dimension of grid (< 100)"));
     
     if (isNaN(dimensions) || dimensions <= 0 || dimensions > 100) {
@@ -32,8 +30,8 @@ newBtn.addEventListener('click', function(e) {
         return;
     }
 
-    // Calculate size of squares
-    const squareSize = 16; // Base size of each square
+    
+    const squareSize = 16; 
     const containerSize = squareSize * dimensions; // Size of container
 
     // Update container size
