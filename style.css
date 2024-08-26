@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -7,6 +8,26 @@ body {
     background-color: #f0f0f0;
 }
 
+/* Styling for the green button */
+.green-button {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    border: none; 
+    margin-bottom: 20px;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Hover effect for the button */
+.green-button:hover {
+    background-color: #45a049; 
+    transform: scale(1.05); 
+}
 .container {
     display: flex;
     flex-wrap: wrap;
