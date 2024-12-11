@@ -1,8 +1,13 @@
+const container = document.querySelector('.container');
+const newBtn = document.querySelector('.green-button');
+const squareColorInput = document.getElementById('square-color');
+const hoverColorInput = document.getElementById('hover-color');
+
 // Function to create a grid
 function createGrid(dimensions) {
     const squareSize = 16;
     const containerSize = squareSize * dimensions;
-
+    
     container.style.width = `${containerSize}px`;
     container.style.height = `${containerSize}px`;
 
@@ -19,17 +24,8 @@ function createGrid(dimensions) {
         square.style.height = `${squareSize}px`;
         square.style.backgroundColor = squareColorInput.value; // Set initial square color
 
-        // Add event listeners for mouse and touch
         square.addEventListener('mouseenter', function(e) {
             e.target.style.backgroundColor = hoverColorInput.value; // Change color on hover
-        });
-
-        square.addEventListener('touchmove', function(e) {
-            const touch = e.touches[0];
-            const target = document.elementFromPoint(touch.clientX, touch.clientY);
-            if (target && target.classList.contains('square')) {
-                target.style.backgroundColor = hoverColorInput.value;
-            }
         });
 
         container.appendChild(square);
